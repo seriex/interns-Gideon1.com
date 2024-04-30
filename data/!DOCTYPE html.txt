@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Custom Style SELECT/OPTION Lists</title>
+
+	<style>
+		body {
+			background-color: silver;
+		}
+		main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		.select select,
+		.select option {
+			border: none;
+			outline: none;
+			font-size: 18px;
+			padding: 5px 55px 5px 5px;
+			background-color: slategray;
+			color: white;
+			-webkit-appearance: none; /* for Safari */
+			margin: 0;
+			border-radius: 0;
+		}
+		.select {
+			position: relative;
+			display: inline-block;
+		}
+		.select .arrow {
+			position: absolute;
+			height: 100%;
+			width: 25px;
+			top: 0;
+			right: 0;
+			background-color: dimgray;
+			pointer-events: none;
+		}
+		.select select:focus + .arrow,
+		.select select:hover + .arrow{
+			background-color: dodgerblue;
+		}
+		.select .arrow::before,
+		.select .arrow::after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			left: 5px;
+		}
+		.select .arrow::before {
+			border-color: transparent transparent white transparent;
+			border-width: 0 8px 8px 8px;
+			top: 20%;
+		}
+		.select .arrow::after {
+			border-color: white transparent transparent transparent;
+			border-width: 8px 8px 0 8px;
+			bottom: 20%;
+		}
+	</style>
+
+</head>
+<body>
+	<main>
+		<div class="select">
+			<select>
+				<option value="">Lorem.</option>
+				<option value="">Sequi.</option>
+				<option value="">Praesentium!</option>
+				<option value="">Debitis.</option>
+				<option value="">Sequi.</option>
+				<option value="">Praesentium!</option>
+				<option value="">Debitis.</option>
+			</select>
+			<div class="arrow"></div>
+		</div>
+	</main>
+</body>
+</html>
